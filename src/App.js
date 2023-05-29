@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Cronometer } from './Components/Cronometer/Cronometer';
+import { Timer } from './Components/Timer/Timer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <div className="nav nav-tabs justify-content-center">
+          <button className="nav-link button active" data-bs-toggle="tab" data-bs-target="#nav-cronometer">
+            <i className="fa-solid fa-stopwatch"></i>
+          </button>
+          <button className="nav-link button" data-bs-toggle="tab" data-bs-target="#nav-timer">
+            <i className="fa-regular fa-hourglass-half"></i>
+          </button>
+        </div>
+      </nav>
+      <div className="tab-content">
+        <div className="tab-pane fade show active" id="nav-cronometer">
+          <Cronometer />
+        </div>
+        <div className="tab-pane fade" id="nav-timer">
+          <Timer />
+        </div>
+      </div>
+      
+    </>
   );
 }
 
